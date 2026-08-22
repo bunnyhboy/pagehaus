@@ -17,8 +17,6 @@ class InitiateEsewaPaymentView(APIView):
     POST { "order_id": "..." }
     -> { "payment_url": "...", "fields": {...} }
 
-    Frontend builds a hidden HTML form from `fields` and auto-submits it
-    (POST) to `payment_url` — this is eSewa's required flow.
     """
 
     permission_classes = [IsAuthenticated]

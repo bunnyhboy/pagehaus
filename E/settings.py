@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
     'django_filters',
+    "corsheaders",
     'account',
     'books',
     'dashboard',
@@ -60,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = 'E.urls'
@@ -164,7 +167,9 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
@@ -180,8 +185,12 @@ ESEWA_STATUS_CHECK_URL = os.environ.get(
     "ESEWA_STATUS_CHECK_URL", "https://rc-epay.esewa.com.np/api/epay/transaction/status/"
 )
 ESEWA_SUCCESS_URL = os.environ.get(
-    "ESEWA_SUCCESS_URL", "http://localhost:8000/payment/esewa/success/"
+    "ESEWA_SUCCESS_URL", "http://localhost:3000/payment/esewa/success/"
 )
 ESEWA_FAILURE_URL = os.environ.get(
-    "ESEWA_FAILURE_URL", "http://localhost:8000/payment/esewa/failure/"
+    "ESEWA_FAILURE_URL", "http://localhost:3000/payment/esewa/failure/"
 )
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
