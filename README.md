@@ -2,7 +2,7 @@
 
 Django REST Framework backend for a bookstore ecommerce platform. Includes JWT authentication, eSewa payments, catalog, cart, checkout, reviews, discounts, and staff analytics.
 
-**Frontend:** [`chapter-and-verse-frontend`](https://github.com/bunnyhboy/pagehaus-frontend) — Next.js, TypeScript, Tailwind
+**Frontend:** [`PageHaus-frontend`](https://github.com/bunnyhboy/pagehaus-frontend) — Next.js, TypeScript, Tailwind
 
 ## Stack
 
