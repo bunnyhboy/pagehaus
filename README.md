@@ -1,4 +1,4 @@
-# Chapter & Verse — Backend
+# PageHaus — Backend
 
 Django REST Framework backend for a bookstore ecommerce platform. Includes JWT authentication, eSewa payments, catalog, cart, checkout, reviews, discounts, and staff analytics.
 
